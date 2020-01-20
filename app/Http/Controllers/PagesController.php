@@ -6,28 +6,20 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function action(){
-        $action = "Action";
-        return view('pages.action', compact('action'));
-    }
-    public function about(){
-        $about = "About";
-        return view('pages.about', compact('about'));
-    }
-    public function join(){
-        $join = "Join";
-        return view('pages.join', compact('join'));
-    }
-    public function contact(){
-        $contact = "Contact";
-        return view('pages.contact', compact('contact'));
-    }
-    public function news(){
-        $news = "News";
-        return view('pages.news', compact('news'));
-    }
-    public function showCustomer(){
-        $customer = array("Chandaraty", "Maly", "Samphas", "Donat");
-        return view('pages.customer', compact('customer'));
+    
+    public function listCustomer()
+    {
+        $customer = array(
+
+            '0' => array('id' => 1, 'name' => 'Chandaraty', 'email' => 'chandaraty@example.org'),
+
+            '1' => array('id' => 2, 'name' => 'Maly', 'email' => 'maly@example.org'),
+
+            '2' => array('id' => 3, 'name' => 'Samphas', 'email' => 'samphas@example.org'),
+
+            '3' => array('id' => 4, 'name' => 'Donat', 'email' => 'donat@example.org')
+        );
+        
+        return view('pages.listcustomer', compact('customer'));
     }
 }
